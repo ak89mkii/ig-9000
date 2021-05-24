@@ -44,13 +44,13 @@ def mom_9000_speak(audio_string):
 
 def respond(voice_data):
     if 'what is your name' in voice_data:
-        mom_9000_speak('My name is holo mom 9000.')
+        mom_9000_speak('My name is  ig 9000.')
     if 'what time is it' in voice_data:
         mom_9000_speak(ctime())
     if 'who is the best' in voice_data:
-        mom_9000_speak('Rocket is the best.')
+        mom_9000_speak('Bender is the best.')
     if 'say something' in voice_data:
-        sayings_list = ['what a cute little gnome', 'jesus mary and joseph', 'shut the explitive deleted up', 'matka boska', 'brothers and sister brothers and sister are they nice', 'eat all the junk food you want']
+        sayings_list = ['Ha', 'do or do not, there is no try, except in javascript', 'shut the explitive deleted up']
         mom_9000_speak(random.choice(sayings_list))
     if 'cook' in voice_data:
         mom_9000_speak('jesus mary and joseph.')
