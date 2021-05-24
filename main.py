@@ -14,7 +14,7 @@ r = sr.Recognizer()
 @app.route("/")
 def home():
     sayings_list = ['hello', 'whats up', 'good day', 'do you have a question', 'how may i be of assistance']
-    mom_9000_speak(random.choice(sayings_list))
+    ig_9000_speak(random.choice(sayings_list))
     voice_data = record_audio()
     respond(voice_data)
     return render_template('index.html')
@@ -22,18 +22,18 @@ def home():
 def record_audio(ask=False):
     with sr.Microphone() as source:
         if ask:
-            mom_9000_speak(ask)
+            ig_9000_speak(ask)
         audio = r.listen(source)
         voice_data = ''
         try:
             voice_data = r.recognize_google(audio)
         except sr.UnknownValueError:
-            mom_9000_speak('im sorry my responses are limited. you must ask the right questions')
+            ig_9000_speak('im sorry my responses are limited. you must ask the right questions')
         except sr.RequestError:
-            mom_9000_speak('Sorry, speech service down.')
+            ig_9000_speak('Sorry, speech service down.')
         return voice_data
 
-def mom_9000_speak(audio_string):
+def ig_9000_speak(audio_string):
     tts = gTTS(text=audio_string, lang='en')
     r = random.randint(1, 1000000)
     audio_file = 'audio-' + str(r) + '.mp3'
@@ -44,16 +44,16 @@ def mom_9000_speak(audio_string):
 
 def respond(voice_data):
     if 'what is your name' in voice_data:
-        mom_9000_speak('My name is  ig 9000.')
+        ig_9000_speak('My name is  ig 9000.')
     if 'what time is it' in voice_data:
-        mom_9000_speak(ctime())
+        ig_9000_speak(ctime())
     if 'who is the best' in voice_data:
-        mom_9000_speak('Bender is the best.')
+        ig_9000_speak('Bender is the best.')
     if 'say something' in voice_data:
         sayings_list = ['Ha', 'do or do not, there is no try, except in javascript', 'shut the explitive deleted up']
-        mom_9000_speak(random.choice(sayings_list))
+        ig_9000_speak(random.choice(sayings_list))
     if 'cook' in voice_data:
-        mom_9000_speak('jesus mary and joseph.')
+        ig_9000_speak('jesus mary and joseph.')
 
 
 # @app.route('/activate', methods=['POST'])
