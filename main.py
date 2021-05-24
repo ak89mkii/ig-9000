@@ -13,7 +13,7 @@ r = sr.Recognizer()
 
 @app.route("/")
 def home():
-    sayings_list = ['hello', 'whats up', 'good day', 'do you have a question']
+    sayings_list = ['hello', 'whats up', 'good day', 'do you have a question', 'how may i be of assistance']
     mom_9000_speak(random.choice(sayings_list))
     voice_data = record_audio()
     respond(voice_data)
