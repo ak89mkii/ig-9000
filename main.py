@@ -55,12 +55,5 @@ def respond(voice_data):
     if 'cook' in voice_data:
         ig_9000_speak('jesus mary and joseph.')
 
-
-# @app.route('/activate', methods=['POST'])
-# def activate(mom_9000_speak):
-#     mom_9000_speak('How may I be of service?')
-#     voice_data = record_audio()
-#     respond(voice_data)
-
 if __name__=="__main__":
     app.run(port=5000, debug=True, threaded=True)
